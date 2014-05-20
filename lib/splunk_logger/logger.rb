@@ -9,8 +9,8 @@ module SplunkLogger
   
     class << self
       [:debug, :info, :warn, :error, :fatal].each do |meth|
-        define_method(meth) { |error_code, *args|
-          logger.send(meth, message(error_code, args))
+        define_method(meth) { |error_code, hash|
+          logger.send(meth, message(error_code, hash))
         }
       end
   

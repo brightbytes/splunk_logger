@@ -7,7 +7,7 @@ shared_context "logger methods" do |target_logger|
     ["debug", "info", "warn", "error", "fatal"].each { |e| 
       it e do
         target_logger.should_receive(e)
-        SplunkLogger::Logger.send(e, "ErrorCode", "key")
+        SplunkLogger::Logger.send(e, "ErrorCode", {key: "val"})
       end
     } 
   end
