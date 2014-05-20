@@ -4,7 +4,7 @@ module SplunkLogger
     KeyRegex = Regexp.new('\W')
   
     def message(error_code, hash)
-      ([error_code] + to_pairs(message_data(hash))).join(" ")
+      ([error_code] + to_pairs(hash)).join(" ")
     end
 
     protected # implementation of protected class methods thanks http://blog.jayfields.com/2006/11/ruby-protected-class-methods.html
